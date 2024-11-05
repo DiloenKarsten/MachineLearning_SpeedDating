@@ -21,3 +21,8 @@ df.to_csv('C:/Users/svejr/Downloads/speeddating_cleaned.csv', index=False)
 print("Cleaned CSV file saved.")
 
 print(df.head)
+empty_columns = df.columns[df.isnull().any()]
+for col in empty_columns:
+    
+    df[col].median()
+    print(f"Column: {col}, Type: {df[col].dtype}, Lenght: {(len(df[col]))}")
